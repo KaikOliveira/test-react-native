@@ -17,7 +17,7 @@ import {
 
 import api from '../../services/api';
 
-export default function ToDoList() {
+export default function ToDoList({ navigation }) {
   const [tasks, setTasks] = useState([]);
   const [isSelected, setSelection] = useState(false);
 
@@ -46,7 +46,7 @@ export default function ToDoList() {
         ))}
       </ContainerList>
 
-      <ButtonAdd>
+      <ButtonAdd onPress={() => navigation.navigate('Create')}>
         <Feather name="plus" size={32} color="#fff" />
       </ButtonAdd>
     </Wrapper>
