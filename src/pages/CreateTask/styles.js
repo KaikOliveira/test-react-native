@@ -39,3 +39,27 @@ export const InputDescription = styled.TextInput`
   border-width: 1px;
   font-size: 22px;
 `;
+
+export const InputDateAndTime = styled.View``;
+
+export const Date = styled.TextInput`
+  width: 95%;
+  height: 60px;
+  margin-left: 2.5%;
+  background: #fff;
+  border-color: #d3e2e6;
+  border-radius: 15px;
+  border-width: 1px;
+  font-size: 22px;
+`;
+
+export const Time = styled.TextInput`
+  width: 95%;
+  height: 60px;
+  margin-left: 2.5%;
+  background: #fff;
+  border-color: #d3e2e6;
+  border-radius: 15px;
+  border-width: 1px;
+  font-size: 22px;
+`;

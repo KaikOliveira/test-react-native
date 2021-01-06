@@ -6,6 +6,9 @@ import {
   Label,
   InputTitle,
   InputDescription,
+  InputDateAndTime,
+  Date,
+  Time,
 } from './styles';
 
 export default function CreateTask() {
@@ -16,8 +19,12 @@ export default function CreateTask() {
           <Label>Titulo</Label>
           <InputTitle />
           <Label>Descrição</Label>
-          <InputDescription />
+          <InputDescription multiline />
         </Inputs>
+        <InputDateAndTime>
+          <Date multiline dataDetectorTypes={['calendarEvent']} />
+          <Time />
+        </InputDateAndTime>
       </ContainerForm>
     </Wrapper>
   );
