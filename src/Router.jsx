@@ -18,7 +18,20 @@ function Router() {
             headerShown: false,
           }}
         />
-        <Stack.Screen name="Lista" component={ToDoList} />
+        <Stack.Screen
+          name="Lista"
+          component={ToDoList}
+          options={{
+            headerShown: true,
+            headerStyle: {
+              backgroundColor: ' #039be6',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

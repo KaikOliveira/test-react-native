@@ -10,13 +10,20 @@ export const Wrapper = styled.SafeAreaView`
 
 export const Container = styled.View`
   width: 85%;
-  height: 260px;
-  border-color: #d3e2e6;
+  height: 350px;
+  border-color: #808080;
   border-radius: 15px;
-  border-width: 0.2px;
-  background: ${shade(0.02, '#039be6')};
+  border-width: 0.4px;
+  background: ${shade(0.01, '#039be6')};
   justify-content: space-between;
   align-items: center;
+`;
+
+export const Title = styled.Text`
+  font-size: 32px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 18px;
 `;
 
 export const Inputs = styled.View`
@@ -31,7 +38,7 @@ export const InputLogon = styled.TextInput`
   border-color: #d3e2e6;
   border-radius: 15px;
   border-width: 1px;
-  margin-top: 15px;
+  font-size: 22px;
 `;
 
 export const InputPassword = styled.TextInput`
@@ -42,6 +49,7 @@ export const InputPassword = styled.TextInput`
   border-radius: 15px;
   border-width: 1px;
   margin-top: 15px;
+  font-size: 22px;
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -51,13 +59,13 @@ export const Button = styled.TouchableOpacity`
   border-color: #d3e2e6;
   border-radius: 15px;
   border-width: 1px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   align-items: center;
   justify-content: center;
 `;
 
 export const Label = styled.Text`
-  color: #8fa7b3;
+  color: #111;
   font-size: 25px;
   font-weight: 700;
 `;
