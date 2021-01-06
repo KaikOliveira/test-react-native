@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-export const View = styled.View`
-  flex: 1;
-  background: #808080;
-`;
+export const Wrapper = styled.SafeAreaView``;
 
-export const Text = styled.Text`
-  color: #c58080;
-  font-size: 25px;
-`;
+export const ContainerList = styled.View``;
