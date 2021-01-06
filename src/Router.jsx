@@ -14,7 +14,17 @@ function Router() {
       <StatusBar barStyle="light-content" backgroundColor="#039be6" />
 
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#039be6',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        >
           <Stack.Screen
             name="Welcome"
             component={Welcome}
@@ -25,16 +35,7 @@ function Router() {
           <Stack.Screen
             name="Lista"
             component={ToDoList}
-            options={{
-              headerShown: true,
-              headerStyle: {
-                backgroundColor: ' #039be6',
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
-            }}
+            options={{ title: 'Lista de tarefas' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
