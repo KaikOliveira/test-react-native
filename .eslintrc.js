@@ -25,6 +25,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-console': ['error', { allow: ['tron'] }],
     'react/prop-types': ['off'],
+    'eslint import/no-unresolved': ['off'],
     'no-use-before-define': 'off',
   },
 };

@@ -1,29 +1,27 @@
 import React from 'react';
 
-/*
-import { Button, View, Text } from 'react-native';
-
-export default function Welcome({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
-  );
-}
-*/
-
-import { Wrapper, Button, Label } from './styles';
+import {
+  Wrapper,
+  Container,
+  Button,
+  Label,
+  Inputs,
+  InputLogon,
+  InputPassword,
+} from './styles';
 
 export default function Welcome({ navigation }) {
   return (
     <Wrapper>
-      <Button onPress={() => navigation.navigate('Lista')}>
-        <Label>Gooo</Label>
-      </Button>
+      <Container>
+        <Inputs>
+          <InputLogon placeholder="Login" />
+          <InputPassword secureTextEntry placeholder="Password" />
+        </Inputs>
+        <Button onPress={() => navigation.navigate('Lista')}>
+          <Label>Entrar</Label>
+        </Button>
+      </Container>
     </Wrapper>
   );
 }
