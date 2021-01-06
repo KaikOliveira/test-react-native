@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 // eslint-disable-next-line import/no-unresolved
 import CheckBox from '@react-native-community/checkbox';
 
@@ -11,6 +12,7 @@ import {
   Title,
   Description,
   Date,
+  ButtonAdd,
 } from './styles';
 
 import api from '../../services/api';
@@ -43,6 +45,10 @@ export default function ToDoList() {
           </List>
         ))}
       </ContainerList>
+
+      <ButtonAdd>
+        <Feather name="plus" size={32} color="#fff" />
+      </ButtonAdd>
     </Wrapper>
   );
 }
