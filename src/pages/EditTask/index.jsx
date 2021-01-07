@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react';
-import { Platform } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+// eslint-disable-next-line import/no-unresolved
+import CheckBox from '@react-native-community/checkbox';
 
 import ButtonCheck from '../../components/ButtonCheck/index';
 
@@ -18,14 +20,17 @@ import {
   Timer,
   OpenTimerPickerButton,
   OpenTimerPickerText,
+  CompletedCheckBox,
+  CompletedCheckBoxText,
 } from './styles';
 
-export default function CreateTask({ navigation }) {
+export default function EditTask({ navigation }) {
   const [showDatePicker, setShowDateTimePicker] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [date, setDate] = useState(new Date(1598051730000));
   const [show, setShow] = useState(false);
+  const [isSelected, setSelection] = useState(false);
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -98,7 +103,23 @@ export default function CreateTask({ navigation }) {
         </InputDateAndTime>
       </ContainerForm>
 
+      <CompletedCheckBox>
+        <CheckBox
+          value={isSelected}
+          onValueChange={setSelection}
+          style={styles.checkbox}
+        />
+        <CompletedCheckBoxText>Completada?</CompletedCheckBoxText>
+      </CompletedCheckBox>
+
       <ButtonCheck onPress={() => navigation.navigate('Edit')} />
     </Wrapper>
   );
 }
+
+const styles = StyleSheet.create({
+  checkbox: {
+    marginLeft: 19,
+    alignSelf: 'center',
+  },
+});

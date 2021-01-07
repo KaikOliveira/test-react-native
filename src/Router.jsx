@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Welcome from './pages/Welcome/index';
 import ToDoList from './pages/ToDoList/index';
 import CreateTask from './pages/CreateTask/index';
+import EditTask from './pages/EditTask/index';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +43,11 @@ function Router() {
             name="Create"
             component={CreateTask}
             options={{ title: 'Adicionar uma nova tarefa' }}
+          />
+          <Stack.Screen
+            name="Edit"
+            component={EditTask}
+            options={{ title: 'Edição da tarefa' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

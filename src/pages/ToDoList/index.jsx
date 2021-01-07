@@ -37,7 +37,7 @@ export default function ToDoList({ navigation }) {
               onValueChange={setSelection}
               style={styles.checkbox}
             />
-            <ContainerData>
+            <ContainerData onPress={() => navigation.navigate('Edit')}>
               <Title>{task.title}</Title>
               <Description>{task.description}</Description>
               <Date>{task.date}</Date>

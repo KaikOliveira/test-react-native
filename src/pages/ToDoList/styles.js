@@ -21,7 +21,7 @@ export const List = styled.View`
   align-items: center;
 `;
 
-export const ContainerData = styled.View`
+export const ContainerData = styled.TouchableOpacity`
   flex-direction: column;
   margin-left: 17px;
 `;

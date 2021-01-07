@@ -27,5 +27,13 @@ module.exports = {
     'react/prop-types': ['off'],
     'eslint import/no-unresolved': ['off'],
     'no-use-before-define': 'off',
+    'no-shadow': [
+      'error',
+      {
+        builtinGlobals: false,
+        hoist: 'never',
+        allow: ['selectedDate', 'date'],
+      },
+    ],
   },
 };
