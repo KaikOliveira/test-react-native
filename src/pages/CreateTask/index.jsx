@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Platform } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import api from '../../services/api';
 
 import ButtonCheck from '../../components/ButtonCheck/index';
 
@@ -24,8 +25,12 @@ export default function CreateTask({ navigation }) {
   const [showDatePicker, setShowDateTimePicker] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [mode, setMode] = useState('date');
-  const [date, setDate] = useState(new Date(1598051730000));
+
   const [show, setShow] = useState(false);
+
+  const [title, setTitile] = useState('');
+  const [description, setDescription] = useState('');
+  const [date, setDate] = useState(new Date(1598051730000));
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -56,14 +61,29 @@ export default function CreateTask({ navigation }) {
     }
   }, []);
 
+  async function handlerCreateTask() {
+    const data = new FormData();
+
+    data.append('title', title);
+    data.append('description', description);
+
+    await api.post('/tasks', data);
+
+    navigation.navigate('Lista');
+  }
+
   return (
     <Wrapper>
       <ContainerForm>
         <Inputs>
           <Label>Titulo</Label>
-          <InputTitle />
+          <InputTitle value={title} onChangeText={setTitile} />
           <Label>Descrição</Label>
-          <InputDescription multiline />
+          <InputDescription
+            multiline
+            value={description}
+            onChangeText={setDescription}
+          />
         </Inputs>
         <Label>Data e hora de conclusão</Label>
         <InputDateAndTime>
@@ -98,7 +118,7 @@ export default function CreateTask({ navigation }) {
         </InputDateAndTime>
       </ContainerForm>
 
-      <ButtonCheck onPress={() => navigation.navigate('Edit')} />
+      <ButtonCheck onPress={handlerCreateTask} />
     </Wrapper>
   );
 }
