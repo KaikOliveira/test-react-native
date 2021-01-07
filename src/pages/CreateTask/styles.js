@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 export const Wrapper = styled.SafeAreaView`
   flex: 1;
@@ -40,26 +40,55 @@ export const InputDescription = styled.TextInput`
   font-size: 22px;
 `;
 
-export const InputDateAndTime = styled.View``;
-
-export const Date = styled.TextInput`
-  width: 95%;
-  height: 60px;
-  margin-left: 2.5%;
-  background: #fff;
-  border-color: #d3e2e6;
-  border-radius: 15px;
-  border-width: 1px;
-  font-size: 22px;
+export const InputDateAndTime = styled.View`
+  flex-direction: row;
+  width: 100%;
 `;
 
-export const Time = styled.TextInput`
-  width: 95%;
-  height: 60px;
+export const Calendar = styled.View`
+  width: 55%;
   margin-left: 2.5%;
+`;
+
+export const Title = styled.Text`
+  color: #f4ede8;
+  font-size: 24px;
+  margin: 0 24px 24px;
+`;
+
+export const OpenDatePickerButton = styled.TouchableOpacity`
+  height: 55px;
+
   background: #fff;
   border-color: #d3e2e6;
-  border-radius: 15px;
   border-width: 1px;
-  font-size: 22px;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const OpenDatePickerText = styled.Text`
+  font-size: 16px;
+  color: #232129;
+`;
+
+export const Timer = styled.View`
+  width: 45%;
+`;
+
+export const OpenTimerPickerButton = styled.TouchableOpacity`
+  height: 55px;
+
+  background: #fff;
+  border-color: #d3e2e6;
+  border-width: 1px;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 24px;
+`;
+
+export const OpenTimerPickerText = styled.Text`
+  font-size: 16px;
+  color: #232129;
 `;
